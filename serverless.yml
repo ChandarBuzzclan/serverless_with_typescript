@@ -1,0 +1,17 @@
+service: my-express-application
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: dev
+  region: us-east-2
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - httpApi: '*'
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript

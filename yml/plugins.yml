@@ -1,0 +1,6 @@
+# Define plugins used by the service
+plugins:
+  - serverless-offline  # Plugin for simulating AWS Lambda and API Gateway locally
+  - serverless-plugin-typescript  # Plugin for TypeScript support
+
+# Additional plugin configurations can be added here

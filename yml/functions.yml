@@ -1,0 +1,8 @@
+# Define the functions and their configurations
+functions:
+  app:
+    handler: index.handler
+    events:
+      - httpApi: '*'
+
+# Additional function configurations can be added here
