@@ -3,6 +3,7 @@ import express , { NextFunction , Request , Response} from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
+import { CommonRoute,UserRoute } from './src/routes/index';
 
 const app = express()
 
@@ -12,7 +13,6 @@ app.use(cors())
 app.use(helmet())
 app.use(morgan('tiny'))
 
-const { CommonRoute,UserRoute } = require('./src/routes/index');
 app.use('/api/v1/user',[UserRoute])
 app.use('/api/v1',[CommonRoute])
 
