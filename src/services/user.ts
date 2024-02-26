@@ -1,5 +1,6 @@
 import client from "../utility/contenful"
 import { Request,Response } from "express"
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 async function userInfo(req:Request,res:Response) {
     return res.json({ success:true,message:'user info from user services' })
