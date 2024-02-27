@@ -2,7 +2,6 @@ import serverless from 'serverless-http';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import morgan from 'morgan';
 import { eventService } from './src/services/event/index';
 import { messageController } from './src/controllers/message/index';
 const app = express();
@@ -11,7 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(helmet());
-app.use(morgan('tiny'));
 
 const { CommonRoute, UserRoute } = require('./src/routes/index');
 app.use('/api/v1/user', [UserRoute]);
