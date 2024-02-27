@@ -1,6 +1,6 @@
 import express from 'express';
-import { userInfo }  from '../services/user'
+import { userInfo } from '../services/user';
 const router = express.Router();
 
-router.get('/user-info',userInfo);
+router.get('/user-info', userInfo);
 export default router;

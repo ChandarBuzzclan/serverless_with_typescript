@@ -16,7 +16,6 @@ export class EventService {
    * Handles an sqs event by processing every message of it
    */
   async handle(event: SQSEvent) {
-    console.log('you are here');
     // Get parsed messages from the event
     const dequeuedMessages = this.mapEventToDequeuedMessages(event);
     const messagesToDelete: DequeuedMessage[] = [];
@@ -72,7 +71,9 @@ export class EventService {
     // If processing of the message fails
     // and you want that this process should be not retried for this specific case, throw a NonRetriableError
     // otherwise throw any other error to leave the message in the sqs queue.
-    this.logService.info(EventService.name, 'Processed message', message, 'successfully.');
+    this.logService.info(EventService.name, {
+      message: '',
+    });
   }
 
   private mapEventToDequeuedMessages(event: SQSEvent): DequeuedMessage[] {
