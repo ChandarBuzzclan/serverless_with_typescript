@@ -4,6 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { eventService } from './src/services/event/index';
 import { messageController } from './src/controllers/message/index';
+import { templateController } from './src/controllers/template';
 const app = express();
 
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use('/api/v1/user', [UserRoute]);
 app.use('/api/v1', [CommonRoute]);
 
 app.get('/serverless-producer', messageController.produceMessage);
+app.post('/template-generator', templateController.generateTemplate);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   const error = 'Oops! page not found';
