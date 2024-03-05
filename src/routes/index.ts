@@ -1,3 +1,4 @@
 import UserRoute from './user';
 import CommonRoute from './common';
-export { UserRoute, CommonRoute };
+import ContentfulRoute from './contentful';
+export { UserRoute, CommonRoute , ContentfulRoute};
